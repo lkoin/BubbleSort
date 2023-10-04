@@ -6,19 +6,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj ilosc liczb zawartych w tablicy: ");
         int SIZE = scanner.nextInt();
-        System.out.println("Generowanie tablicy...");
-        double array[] = new double[SIZE];
-        for (int i = 0; i < SIZE; i++) {
-            array[i] = randDouble(30, 70);
-            System.out.print(array[i] + ", ");
-        }
-        System.out.println(" 10");
+        double[] array = fillArray(SIZE);
+        System.out.println(" ");
         bubbleSort(array);
         for (int i = 0; i < SIZE; i++) {
             System.out.print(array[i] + ", ");
         }
-
-
     }
 
     public static double[] bubbleSort(double[] array) {
@@ -45,6 +38,16 @@ public class Main {
         return (double) Math.round(randomNum * 100) /100;
 
 
+    }
+
+    public static double[] fillArray(int SIZE) {
+        double array[] = new double[SIZE];
+        System.out.println("Generowanie tablicy...");
+        for (int i = 0; i < SIZE; i++) {
+            array[i] = randDouble(30, 70);
+            System.out.print(array[i] + ", ");
+        }
+        return array;
     }
 
 
